@@ -1,3 +1,12 @@
+
+
+### **Weather7day App**  Web Application to show 7 day weather forcast for chosen location
+
+#### **Author**  **Andrew Ulrich**
+
+##### React / Google geocode API WeatherBit AP
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
