@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card, CardBody } from 'reactstrap';
+import { CardBody } from 'reactstrap';
 import styled from 'styled-components';
 
-const StyledCard = styled(Card)`
+const StyledCard = styled(CardBody)`
 background-color: papayawhip
 text-align: center
 h3 {
@@ -15,7 +15,6 @@ const DayDetail = props => {
         <StyledCard>
             <CardBody>
                 <h3> {props.day} </h3>
-
                 <h3>{parseInt(props.current).toFixed(0)}°</h3>
                 <p>
                     <img src={`${process.env.PUBLIC_URL}/icons/${props.icon}.png`} alt={props.description} />
