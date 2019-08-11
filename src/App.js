@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import SearchBar from "./components/SearchBar";
 import DayCard from "./components/DayCard";
 import DayDetail from "./components/DayDetail";
+
 // import data from "./data/sample.json";
 import moment from "moment";
 import API from './utils/API'
@@ -18,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getWeather('New York, NY');
+    this.getWeather('Phoenix, AR');
   }
 
 
@@ -34,11 +35,23 @@ class App extends Component {
   }
 
 
-
-
   selectDay = day => {
     this.setState({ selectedDay: day })
   }
+
+
+  handleInputChange = event => {
+    const { value } = event.target;
+    this.setState({ searchedLoc: value });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.searchedLoc) {
+      this.getWeather(this.state.searchedLoc);
+    }
+  };
+
 
   render() {
     return (
@@ -49,7 +62,26 @@ class App extends Component {
           </Col>
 
           <Col md={5}>
-            <SearchBar />
+            {/* <h2 style={{ color: "palevioletred" }}>SearchBar</h2> */}
+
+{/* 
+            <form className="form">
+              <input
+                value={this.state.searchedLoc}
+                name="searchedLoc"
+                onChange={this.handleInputChange}
+                type="text"
+                placeholder="City, State/Country"
+              />
+              <button onClick={this.handleFormSubmit}>Submit</button>
+            </form> */}
+
+            <SearchBar
+              value={this.state.searchedLoc}
+              name="searchedLoc"
+              handleInputChange={this.handleInputChange}
+              handleFormSubmit={this.handleFormSubmit}
+            />
           </Col>
         </Row>
 

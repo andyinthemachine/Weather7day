@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardBody } from 'reactstrap';
 import styled from 'styled-components';
 
-const StyledCard = styled(CardBody)`
+const StyledCard = styled(Card)`
 background-color: papayawhip
 text-align: center
 h3 {
@@ -37,8 +37,3 @@ const DayDetail = props => {
 
 export default DayDetail;
 
-// description={this.state.selectedDay.weather.description}
-// windspeed={this.state.selectedDay.wind_spd}
-// relhumidity={this.state.selectedDay.rh}
-// sunrise={moment(this.state.selectedDay.sunrise_ts, "YYYY-MM-DD").format("LT")}
-// ozone={this.state.selectedDay.ozone}
