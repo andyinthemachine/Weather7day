@@ -11,16 +11,16 @@ img{
 }
 color: palevioletred;
 .card {
-    border: ${props => props.isActive ?  "4px solid gray" : "4px red"}
+    border: ${props => props.isActive ?  "2px solid gray" : "2px solid gray"}
     text-align: center
     background-color: papayawhip
 }
 .card-header {
-    background: ${props => props.isActive ? "blue": null};
+    background: ${props => props.isActive ? "gray": null};
 }
 :hover{
     .card {
-        border: 2px solid blue;
+        border: 2px solid palevioletred;
     }
 }
 `
@@ -38,7 +38,7 @@ const DayCard = props => {
                     </p>
                     <p><strong>High: </strong>{parseInt(props.high).toFixed(0)}°</p>
                     <p><strong>Low: </strong>{parseInt(props.low).toFixed(0)}°</p>
-                    <p><strong>Precip: </strong>{props.precip}</p>
+                    <p><strong>Precp: </strong>{props.precip}%</p>
                 </CardBody>
             </Card>
         </CardWrapper>

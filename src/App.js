@@ -45,7 +45,7 @@ class App extends Component {
       <Container>
         <Row>
           <Col md={7}>
-            <h1>{this.state.searchedLoc}</h1>
+            <h2 style={{ color: "palevioletred" }}>{this.state.searchedLoc}</h2>
           </Col>
 
           <Col md={5}>
@@ -80,10 +80,13 @@ class App extends Component {
                 precip={this.state.selectedDay.pop}
                 icon={this.state.selectedDay.weather.icon}
                 description={this.state.selectedDay.weather.description}
+                windspeed={this.state.selectedDay.wind_spd}
+                relhumidity={this.state.selectedDay.rh}
+                // sunrise={moment(this.state.selectedDay.sunrise_ts, "YYYY-MM-DD").format("LT")}
+                ozone={this.state.selectedDay.ozone}
                 day={moment(this.state.selectedDay.datetime, "YYYY-MM-DD").format("MMMM Do, YYYY")} />
             ) : (
-                <h3>No day selected</h3>
-
+                <h3 style={{ color: "palevioletred" }}>No day selected</h3>
               )}
           </Col>
         </Row>
