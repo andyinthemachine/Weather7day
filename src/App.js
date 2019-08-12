@@ -41,6 +41,7 @@ class App extends Component {
 
 
   handleInputChange = event => {
+    event.preventDefault();
     const { value } = event.target;
     this.setState({ searchedLoc: value });
   };
@@ -64,7 +65,7 @@ class App extends Component {
           <Col md={5}>
             {/* <h2 style={{ color: "palevioletred" }}>SearchBar</h2> */}
 
-{/* 
+            {/* 
             <form className="form">
               <input
                 value={this.state.searchedLoc}
