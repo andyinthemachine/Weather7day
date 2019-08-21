@@ -22,7 +22,6 @@ class App extends Component {
     this.getWeather('Phoenix, AR');
   }
 
-
   getWeather = location => {
     API.getWeather(location)
       .then(res => {
@@ -34,11 +33,9 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-
   selectDay = day => {
     this.setState({ selectedDay: day })
   }
-
 
   handleInputChange = event => {
     event.preventDefault();
@@ -63,47 +60,38 @@ class App extends Component {
           </Col>
 
           <Col md={5}>
-            {/* <h2 style={{ color: "palevioletred" }}>SearchBar</h2> */}
-
-            {/* 
-            <form className="form">
-              <input
-                value={this.state.searchedLoc}
-                name="searchedLoc"
-                onChange={this.handleInputChange}
-                type="text"
-                placeholder="City, State/Country"
-              />
-              <button onClick={this.handleFormSubmit}>Submit</button>
-            </form> */}
-
             <SearchBar
               value={this.state.searchedLoc}
               name="searchedLoc"
               handleInputChange={this.handleInputChange}
               handleFormSubmit={this.handleFormSubmit}
-            />
+ />
           </Col>
         </Row>
 
         <Row>
-          {this.state.days.map(day => (
+          {this.state.days.map(day => 
             <DayCard
-              key={day.ts}
-              current={day.temp}
-              high={day.max_temp}
-              low={day.min_temp}
-              precip={day.pop}
-              icon={day.weather.icon}
-              description={day.weather.description}
-              day={moment(day.datetime, "YYYY-MM-DD").format("dddd")}
-              selectDay={() => this.selectDay(day)}
-              isActive={this.state.selectedDay === day}
+            key={day.ts}
+            current={day.temp}
+            high={day.max_temp}
+            low={day.min_temp}
+            precip={day.pop}
+            icon={day.weather.icon}
+            description={day.weather.description}
+            windspeed={day.wind_spd}
+            relhumidity={day.rh}
+            uv={day.uv}
+            winddir={day.wind_cdir}
+            ozone={day.ozone}
+            day={moment(day.datetime, "YYYY-MM-DD").format("dddd")}
+            selectDay={() => this.selectDay(day)}
+            isActive={this.state.selectedDay === day}
             />
-          ))}
+          )}
         </Row>
 
-        <Row>
+        {/* <Row>
           <Col md={4}>
             {this.state.selectedDay ? (
               <DayDetail
@@ -122,7 +110,7 @@ class App extends Component {
                 <h3 style={{ color: "palevioletred" }}>No day selected</h3>
               )}
           </Col>
-        </Row>
+        </Row> */}
 
       </Container>
     )
