@@ -1,6 +1,6 @@
 
 
-### **Weather7day App**  Web Application to show 7 day weather forcast for chosen location
+### **Weather7day **  Web Application to show 7 day weather forcast for chosen location
 
 #### **Author**  **Andrew Ulrich**
 
