@@ -4,7 +4,7 @@
 
 #### **Author**  **Andrew Ulrich**
 
-##### React / Google geocode /API WeatherBit API
+##### React / Reactstrap / Google geocode API / WeatherBit API
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
