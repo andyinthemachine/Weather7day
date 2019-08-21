@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getWeather('Phoenix, AR');
+    this.getWeather('Denver, CO');
   }
 
   getWeather = location => {
